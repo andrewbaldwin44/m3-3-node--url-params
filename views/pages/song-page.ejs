@@ -1,0 +1,10 @@
+<%- include('../partials/header') %>
+<main>
+  <div class="song-container">
+    <h2><%= song.title %></h2>
+    <p class='artist'><%= song.artist %></p>
+    <p class='stream'><%= song.streams %></p>
+  </div>
+</main>
+<%- include('../partials/pagination', { currentPage: song.rank }) %>
+<%- include('../partials/footer') %>

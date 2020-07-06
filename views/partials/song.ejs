@@ -1,0 +1,17 @@
+<ul>
+  <% songs.forEach(song => { %>
+    <li>
+      <div class="ranking">
+        <p class="rank"><%= `#${song.rank}` %></p>
+        <p class="streams"><%= `(${song.streams} streams)` %></p>
+      </div>
+      <div class="info">
+        <p class='title'><%= song.title %></p>
+        <p class='artist'><%= `by ${song.artist}` %></p>
+      </div>
+      <div class="publication">
+        <p class='date'><%= `publication date: ${song.publicationDate}` %></p>
+      </div>
+    </li>
+  <% }) %>
+</ul>

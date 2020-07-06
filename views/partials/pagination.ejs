@@ -1,0 +1,12 @@
+<div class="page-controls">
+  <a alt="previous page"
+      href=<%= `./${currentPage - 1 > 0 ? currentPage - 1 : currentPage}` %>
+      class="page-nav previous">
+    Previous
+  </a>
+  <a alt="next page"
+     href=<%= `./${currentPage + 1 <= 50 ? currentPage + 1 : currentPage}` %> 
+     class="page-nav next">
+    Next
+  </a>
+</div>
