@@ -6,5 +6,5 @@
     <p class='stream'><%= song.streams %></p>
   </div>
 </main>
-<%- include('../partials/pagination', { currentPage: song.rank }) %>
+<%- include('../partials/pagination', { currentPage: song.rank , min: 1, max: 50}) %>
 <%- include('../partials/footer') %>

@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+<main>
+  <div class="song-container book-container">
+    <img class="book-image" src=<%= book.imgUrl %> alt=<%= book.title %>/>
+    <h2><%= book.title %></h2>
+    <p class='artist'><%= book.author %></p>
+    <p class='description'><%= book.description %></p>
+  </div>
+</main>
+<%- include('../partials/pagination', { currentPage: book.id, min: 101, max: 125 }) %>
+<%- include('../partials/footer') %>

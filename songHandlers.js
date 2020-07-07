@@ -26,12 +26,13 @@ const popularArtist = (req, res) => {
 const showSong = (req, res) => {
   const songNumber = Number(req.params.pagenum);
 
-  if (top50.some(song => song.rank == songNumber)) {
-    const song = top50.find(song => song.rank == songNumber);
+  top50.forEach(song => {
+    if (song.rank == songNumber) {
+      res.render('pages/song-page', {title: `Song #${songNumber}`, song: song});
+    }
+  });
 
-    res.render('pages/song-page', {title: `Song #${songNumber}`, song: song});
-  }
-  else fourOhFour(req, res);
+  fourOhFour(req, res);
 };
 
 const fourOhFour = (req, res) => {

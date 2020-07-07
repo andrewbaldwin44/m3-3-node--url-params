@@ -25,3 +25,15 @@
 .genre {
   margin-bottom: 30px;
 }
+
+.book-container {
+  margin-top: -100px;
+  height: 70vh;
+  width: 40%;
+}
+
+.book-container .description {
+  text-align: justify;
+  width: 80%;
+  margin: 10px auto;
+}

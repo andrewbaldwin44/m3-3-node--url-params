@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <ul>
   <% books.forEach(book => { %>
-    <li onclick=<%= `window.location='./song/${book.id}'` %> class="book-list">
+    <li onclick=<%= `window.location='books/book/${book.id}'` %> class="book-list">
       <div class="ranking">
         <img class="streams book-image" src=<%= book.imgUrl %> alt=<%= book.title %>/>
         <p class="rank title"><%= book.title %></p>
