@@ -1,6 +1,6 @@
 <ul>
   <% songs.forEach(song => { %>
-    <li onclick=<%= `window.location='./song/${song.rank}'` %>>
+    <li onclick=<%= `window.location='./top50/song/${song.rank}'` %>>
       <div class="ranking">
         <p class="rank"><%= `#${song.rank}` %></p>
         <p class="streams"><%= `(${song.streams} streams)` %></p>

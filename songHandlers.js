@@ -24,9 +24,9 @@ const popularArtist = (req, res) => {
 };
 
 const showSong = (req, res) => {
-  const songNumber = req.params.pagenum;
+  const songNumber = Number(req.params.pagenum);
 
-  if (songNumber > 0 && songNumber <= 50) {
+  if (top50.some(song => song.rank == songNumber)) {
     const song = top50.find(song => song.rank == songNumber);
 
     res.render('pages/song-page', {title: `Song #${songNumber}`, song: song});

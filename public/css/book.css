@@ -1,0 +1,27 @@
+.book-info {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 70%;
+  min-width: 70%;
+}
+
+.book-image{
+  margin-top: 10px;
+}
+
+.book-content {
+  width: 50%;
+}
+
+.book-info p {
+  line-height: 2;
+}
+
+.title {
+  max-width: 40%;
+}
+
+.genre {
+  margin-bottom: 30px;
+}
