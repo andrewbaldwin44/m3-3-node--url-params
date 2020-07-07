@@ -14,7 +14,21 @@ const showBook = (req, res) => {
   fourOhFour(req, res);
 };
 
+const showGenre = (req, res) => {
+  const genre = req.params.genre;
+  const titleGenre = genre.charAt(0).toUpperCase() + genre.slice(1);
+  const genreBooks = books.filter(book => book.type == genre);
+
+  books.forEach(book => {
+    if (book.type == genre) {
+      res.render('pages/books', { title: `${titleGenre} books`, books: genreBooks });
+    }
+  });
+
+  fourOhFour(req, res);
+}
+
 const { books } = require('./data/books');
 const { fourOhFour } = require('./songHandlers.js');
 
-module.exports = { booksPage, showBook };
+module.exports = { booksPage, showBook, showGenre };
