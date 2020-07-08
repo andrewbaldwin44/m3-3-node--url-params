@@ -23,7 +23,7 @@ const popularArtist = (req, res) => {
   res.render('pages/top50', {songs: artistCount[artist], title: 'Most popular Artist'});
 };
 
-const showSong = (req, res) => {
+const showSong = (req, res, next) => {
   const songNumber = Number(req.params.pagenum);
 
   top50.forEach(song => {
@@ -32,7 +32,7 @@ const showSong = (req, res) => {
     }
   });
 
-  fourOhFour(req, res);
+  next();
 };
 
 const fourOhFour = (req, res) => {

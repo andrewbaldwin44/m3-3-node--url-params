@@ -2,7 +2,7 @@ const booksPage = (req, res) => {
   res.render('pages/books', {books: books, title: '25 Books You\'ve Probably Already Read'});
 };
 
-const showBook = (req, res) => {
+const showBook = (req, res, next) => {
   const bookID = Number(req.params.booknum);
 
   books.forEach((book, index) => {
@@ -11,10 +11,10 @@ const showBook = (req, res) => {
     }
   });
 
-  fourOhFour(req, res);
+  next();
 };
 
-const showGenre = (req, res) => {
+const showGenre = (req, res, next) => {
   const genre = req.params.genre;
   const titleGenre = genre.charAt(0).toUpperCase() + genre.slice(1);
   const genreBooks = books.filter(book => book.type == genre);
@@ -25,7 +25,7 @@ const showGenre = (req, res) => {
     }
   });
 
-  fourOhFour(req, res);
+  next();
 }
 
 const { books } = require('./data/books');
